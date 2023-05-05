@@ -109,7 +109,7 @@ class WechatChannel(ChatChannel):
         self.receivedMsgs = ExpiredDict(60 * 60 * 24)
 
     def startup(self):
-        itchat.instance.receivingRetryCount = 600  # 修改断线超时时间
+        itchat.instance.receivingRetryCount = 7200  # 修改断线超时时间
         # login by scan QRCode
         hotReload = conf().get("hot_reload", False)
         status_path = os.path.join(get_appdata_dir(), "itchat.pkl")
